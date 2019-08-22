@@ -4,12 +4,21 @@ module.exports = {
     author: 'Martin Lord'
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `c3qgmy1o150m`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `ZiICeevksOvPCGMQYkUXH9ZP2uP4wjM45dzpM5ggptA`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -28,6 +37,6 @@ module.exports = {
             }
           ]
       }
-    } 
+    }
   ]
 }
